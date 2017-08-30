@@ -10,6 +10,6 @@ class Honor extends Model
 
     public function players()
     {
-        return $this->belongsToMany('App\Player', 'player_honor', 'honor_id', 'player_id');
+        return $this->belongsToMany('App\Player', 'player_honor', 'honor_id', 'player_id')->withPivot('created_at');
     }
 }

@@ -13,7 +13,7 @@ class PlayersTableSeeder extends Seeder
     public function run()
     {
         $select = ['A', 'B', 'C', 'D'];
-        for ($i = 0; $i <= 50; $i++) {
+        for ($i = 0; $i <= 400; $i++) {
             Player::create([
                 'answer_1' => $select[mt_rand(0,3)],
                 'answer_2' => $select[mt_rand(0,3)],

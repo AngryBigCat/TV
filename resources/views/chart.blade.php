@@ -35,6 +35,21 @@
                 </a>--}}
             </div>
         </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{ $toDrawPlayers->count() }}</h3>
+
+                    <p>待抽奖人数</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-star"></i>
+                </div>
+                {{--<a href="#" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>--}}
+            </div>
+        </div>
     </div>
     <div class="row">
         <!-- /.col (LEFT) -->

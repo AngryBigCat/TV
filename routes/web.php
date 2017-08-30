@@ -14,12 +14,20 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/user', 'HomeController@index');
+
+Route::get('/getJson', 'HomeController@getJson')->name('getJson');
+
 Route::get('/chart', 'ChartController@index')->name('chart');
 
 Route::get('/luck', 'LuckController@index')->name('luck');
 
 Route::get('/luck/{id}', 'LuckController@show');
 
+Route::get('/export/{id?}', 'LuckController@export')->name('export');
+
+//导出所有用户
+Route::get('/exportAll', 'HomeController@exportAll')->name('exportAll');
 
 //三位抽奖用户
 Route::post('/drawLucky', 'LuckController@drawLucky')->name('drawLucky');
