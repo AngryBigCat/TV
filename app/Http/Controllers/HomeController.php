@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $players = Player::all();
+        $players = Player::paginate(15);
         return view('home', compact('players'));
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAnswersToPlayerTable extends Migration
+class DropAnswersToPlayerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class AddAnswersToPlayerTable extends Migration
      */
     public function up()
     {
-        Schema::table('players', function (Blueprint $table) {
-            //
-            $table->char('answer_1', 1);
-            $table->char('answer_2', 1);
-            $table->char('answer_3', 1);
-            $table->text('answer_4');
+        Schema::table('Players', function (Blueprint $table) {
+//            $table->dropColumn('answers');
         });
     }
 
@@ -29,8 +25,8 @@ class AddAnswersToPlayerTable extends Migration
      */
     public function down()
     {
-        Schema::table('players', function (Blueprint $table) {
-
+        Schema::table('Players', function (Blueprint $table) {
+            //
         });
     }
 }

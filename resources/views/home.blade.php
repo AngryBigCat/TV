@@ -1,9 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title_prefix', '用户列表 - ')
 
 @section('content_header')
-    <h1>用户列表</h1>
+    <h1>
+        用户列表
+        <small>User List</small>
+    </h1>
 @stop
 
 @section('content')
@@ -33,9 +36,10 @@
                         @foreach($players as $player)
                         <tr>
                             <td>{{ $player->id }}</td>
-                            @foreach($player->answers as $answer)
-                            <td>{{ $answer }}</td>
-                            @endforeach
+                            <td>{{ $player->answer_1 }}</td>
+                            <td>{{ $player->answer_2 }}</td>
+                            <td>{{ $player->answer_3 }}</td>
+                            <td>{{ $player->answer_4 }}</td>
                             <td>{{ $player->name }}</td>
                             <td>{{ $player->age }}</td>
                             <td>{{ $player->phone }}</td>
@@ -54,6 +58,7 @@
                         </tr>
                         </tfoot>--}}
                     </table>
+                    {{ $players->links() }}
                 </div>
                 <!-- /.box-body -->
             </div>
