@@ -39,7 +39,7 @@ class HomeController extends Controller
         $orderDir = $request->input('order')[0]['dir'];
         $search = $request->input('search')['value'];
 
-        $arr = Player::paginate()->toArray();
+        $total = Player::count();
         $column = '';
         switch ($orderColumn) {
             case 0:
@@ -74,8 +74,7 @@ class HomeController extends Controller
                 break;
         }
 
-        $players = DB::table('players')
-            ->where('id', 'like', '%'.$search.'%')
+        $players = Player::where('id', 'like', '%'.$search.'%')
             ->orWhere('name', 'like', '%'.$search.'%')
             ->orWhere('phone', 'like', '%'.$search.'%')
             ->orWhere('age', 'like', '%'.$search.'%')
@@ -89,13 +88,11 @@ class HomeController extends Controller
             ->offset($start)
             ->limit($pageLength)
             ->get();
-
         return [
             'draw' => $draw,
-            'recordsTotal' => $arr['total'],
-            'recordsFiltered' => $arr['total'],
+            'recordsTotal' => $total,
+            'recordsFiltered' => $total,
             'data' => $players,
-            'extra' => $request->all()
         ];
     }
 

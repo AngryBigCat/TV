@@ -23,13 +23,14 @@ class LuckController extends Controller
                 $honors = Honor::all();
                 foreach ($honors as $key => $honor) {
                     $data = [
-                        ['用户ID', '奖品', '姓名', '手机', '地址', '题1','题2', '题3', '题4', '抽奖时间', '提交时间'],
+                        ['用户ID', '奖品', '姓名', '性别', '手机', '地址', '题1','题2', '题3', '题4', '抽奖时间', '提交时间'],
                     ];
                     foreach ($honor->players as $player) {
                         array_push($data, [
                             $player->id,
                             $honor->name,
                             $player->name,
+                            $player->sex,
                             $player->phone,
                             $player->address,
                             $player->answer_1,

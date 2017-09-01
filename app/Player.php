@@ -8,6 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class Player extends Model
 {
+    protected $fillable = [
+        'answer_1',
+        'answer_2',
+        'answer_3',
+        'answer_4',
+        'name',
+        'sex',
+        'phone',
+        'address'
+    ];
+
     public function  honor()
     {
         return $this->belongsToMany('App\Honor', 'player_honor', 'player_id', 'honor_id');

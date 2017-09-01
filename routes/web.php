@@ -26,6 +26,10 @@ Route::get('/luck/{id}', 'LuckController@show');
 
 Route::get('/export/{id?}', 'LuckController@export')->name('export');
 
+Route::post('/player', 'PlayerController@store');
+
+Route::get('/player', 'PlayerController@index');
+
 //导出所有用户
 Route::get('/exportAll', 'HomeController@exportAll')->name('exportAll');
 

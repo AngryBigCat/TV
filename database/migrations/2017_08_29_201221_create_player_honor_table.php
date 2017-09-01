@@ -17,6 +17,7 @@ class CreatePlayerHonorTable extends Migration
             $table->increments('id');
             $table->integer('player_id');
             $table->integer('honor_id');
+            $table->timestamp('created_at');
         });
     }
 

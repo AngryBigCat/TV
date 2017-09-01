@@ -17,7 +17,7 @@ class CreatePlayersTable extends Migration
             //
             $table->smallIncrements('id');
             $table->string('name', 20);
-            $table->unsignedTinyInteger('age');
+            $table->char('sex', 4);
             $table->char('phone', 11);
             $table->string('address', 150);
             $table->timestamps();
